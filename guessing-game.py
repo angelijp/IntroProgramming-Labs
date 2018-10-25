@@ -3,23 +3,46 @@
 # Prof. Johnson
 # CMPT 120L -113 / Lab Activity #5 
 def main():
-    
+    animal = "panda"
     print("\nWelcome to My Python Guessing Game!\n")
-    print ("\nNote*** You may type 'Leave' at anytime to Quit the game.\n")
-    animal = "panda" 
+    print ("\nNote*** You may type 'quit' at anytime to Quit the game.")
     print("I'm thinking of an animal...")
     guess = input("Guess my animal: ").upper().lower()
-    _quit = "leave" 
     
-    while animal != guess and _quit != guess:
-            print("Nope, sorry.")
-            guess = input("Guess my animal: ").upper().lower()
-            break
     while animal == guess:
-            print("Congratulations! You got it!")
+        print("Congratulations! You got it!")
+        corr_guess = input("Do you like pandas? Y or N: ").upper().lower()
+        if corr_guess == "y":
+            print("They are so cute!")
+        elif corr_guess == "n":
+            print("Aww! That's too bad!")
+        break
+    
+    while animal != guess:
+        print("Nope, sorry")
+        gu = input("Give Up? (Y/N): ").upper().lower()
+        while gu == "y":
+            q = input("Type any 'q' word to Quit: ").upper().lower()
+            while "q" in q[0]:
+                print("Alright enough guessing... Thanks for playing!")
+                break
             break
-    while _quit == guess:
-            print("Alright enough guessing... thanks for playing!")
+        break
+    
+    while animal != guess:
+        print("Nope, sorry")
+        gu = input("Give Up? (Y/N): ").upper().lower()
+        while gu == "n":
+            guess = input("Guess my animal: ").upper().lower()
+            while animal == guess:
+                print("Congratulations! You got it!")
+                corr_guess = input("Do you like pandas? Y or N: ").upper().lower()
+                if corr_guess == "y":
+                    print("They are so cute!")
+                elif corr_guess == "n":
+                    print("Aww! That's too bad!")
+                    break
+                break
             break
 main()
 

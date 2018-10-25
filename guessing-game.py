@@ -3,18 +3,25 @@
 # Prof. Johnson
 # CMPT 120L -113 / Lab Activity #5 
 def main():
-    animal = "panda"
-    print("\nWelcome to the Python Guessing Game!\n")
+    
+    print("\nWelcome to My Python Guessing Game!\n")
+    print ("\nNote*** You may type 'Leave' at anytime to Quit the game.\n")
+    animal = "panda" 
     print("I'm thinking of an animal...")
-    guess = input("Guess my animal: ")
-    while animal != guess:
-        print("Dang! Try again!")
-        guess = input("Guess my animal: ")
-    if animal == guess:
-        print("Congratulations, you got it right!")
-    else:
-        print("Dang! Try again!")
-        guess = input("Guess my animal: ")
-        
+    guess = input("Guess my animal: ").upper().lower()
+    _quit = "leave" 
+    
+    while animal != guess and _quit != guess:
+            print("Nope, sorry.")
+            guess = input("Guess my animal: ").upper().lower()
+            break
+    while animal == guess:
+            print("Congratulations! You got it!")
+            break
+    while _quit == guess:
+            print("Alright enough guessing... thanks for playing!")
+            break
 main()
 
+# 2 Issues created in Github
+# Created a new variable for the player to quit the game using elif statement.
